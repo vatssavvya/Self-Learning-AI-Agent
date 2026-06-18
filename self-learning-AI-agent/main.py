@@ -4,6 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
+from langchain.agents import create_tool_calling_agent, AgentExecutor
 
 load_dotenv()
 
@@ -34,6 +35,19 @@ prompt = ChatPromptTemplate.from_messages(
   ]
 ).partial(format_instructions=parser.get_format_instructions())
 
-""" response = llm2.invoke("Is Fortnite still a good game?")
+agent = create_tool_calling_agent(
+    llm=llm2, 
+    prompt=prompt, 
+    tools=[]
+)
+
+agent_executor = AgentExecutor(
+    agent=agent, 
+    tools=[], 
+    verbose = True
+)
+raw_response = agent_executor.invoke({"query": "Fortnite or Roblox, which is better?", "name": "Savya"})
+print(raw_response)
+""" response = llm2.invoke("Is ROBLOX still a good game...")
 print(response)
 """
