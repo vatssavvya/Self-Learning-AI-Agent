@@ -25,7 +25,7 @@ prompt = ChatPromptTemplate.from_messages(
      You are a research assistant that gathers information on a 
      given topic and summarizes it in a clear and concise manner.
      Answer the user query and use necessary tools. 
-     Wrap the output in this format and provide no other text
+     Wrap the output in this format and provide no other text\n{format_instructions}
      """,
     ), 
     ("placeholder", "{chat_history}"), 
