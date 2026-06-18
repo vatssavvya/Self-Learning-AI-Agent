@@ -1,3 +1,12 @@
-#config files for RAG implementation and mem0
+from dotenv import load_dotenv
+from pydantic import BaseModel
+from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
-print("This is the start of the repository.")
+load_dotenv()
+
+#pick which llm to use (Anthropic is Claude, OpenAI is GPT)
+
+llm = ChatAnthropic(model="claude-3-5-sonnet-20241022") #temperature=0.7)
+#llm2 = ChatOpenAI(model="gpt-4o-mini", temperature=0.7) 
+
