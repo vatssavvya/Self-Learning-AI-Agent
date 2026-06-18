@@ -5,7 +5,7 @@ from langchain_anthropic import ChatAnthropic
 
 load_dotenv()
 
-#pick which llm to use (Anthropic is Claude, OpenAI is GPT)
+#pick which llm to use (Anthropic is Claude, OpenAI is GPT), we're using chat because of the free API access, but you can use the non-chat versions if you want to
 
 #llm = ChatAnthropic(model="claude-3-5-sonnet-20241022") #temperature=0.7)
 llm2 = ChatOpenAI(model="gpt-4o-mini", temperature=0.7) 
