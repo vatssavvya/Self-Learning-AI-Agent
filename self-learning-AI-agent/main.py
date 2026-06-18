@@ -9,5 +9,7 @@ load_dotenv()
 
 #llm = ChatAnthropic(model="claude-3-5-sonnet-20241022") #temperature=0.7)
 llm2 = ChatOpenAI(model="gpt-4o-mini", temperature=0.7) 
-response = llm2.invoke("What is the meaning of life?")
+"""
+response = llm2.invoke("Is Fortnite still a good game?")
 print(response)
+"""
