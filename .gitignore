@@ -2,3 +2,4 @@ venv/
 *.class
 .DS_Store
 self-learning-AI-agent/venv/
+.env
