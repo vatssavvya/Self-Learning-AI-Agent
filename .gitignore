@@ -3,3 +3,5 @@ venv/
 .DS_Store
 self-learning-AI-agent/venv/
 .env
+__pycache__/
+*.pyc
