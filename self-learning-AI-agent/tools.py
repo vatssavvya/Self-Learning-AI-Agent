@@ -9,3 +9,6 @@ search_tool = Tool(
     func=search.run,
     description="useful for when you need to search the web"
 )
+
+api_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max = 100) #if we want to return n number of results, change the number to n, and doc content increases the rate limit usage
+wikipedia_tool = WikipediaQueryRun(api_wrapper=api_wrapper)
