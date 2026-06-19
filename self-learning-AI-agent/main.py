@@ -48,11 +48,13 @@ agent_executor = AgentExecutor(
     tools=tools, 
     verbose = True
 )
-raw_response = agent_executor.invoke({"query": "Fortnite or Roblox, which is better?", "name": "Savya"})
+query = input("Enter your research query: ")
+raw_response = agent_executor.invoke({"query": query, "name": "Savya"})
 #print(raw_response)
 
 try:
     structured_response = parser.parse(raw_response.get("output")[0]["text"])
+    print("Structured Response: ", structured_response)
 except Exception as e:
     print(f"Error parsing structured response: {e}", "Raw Response: ", raw_response)
 
